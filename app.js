@@ -24,7 +24,7 @@ app.get("/",function(req,res){
 
 
 app.route('/*').get(function(req, res) { 
-  return res.sendFile(path.join(__dirname, 'public/signup.html')); 
+  return res.sendFile(path.join(__dirname, 'public/index.html')); 
   
 });
 //app.get("/",function(req,res){
