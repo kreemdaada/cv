@@ -1,3 +1,4 @@
+const path = require('path');
 const express = require("express");
 const https =require("https");
 const bodyParser = require("body-parser");
@@ -7,6 +8,9 @@ const app=express();
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended:true}));
+
+
+
 
 app.get("/",function(req,res){
   res.sendFile(__dirname +"/signup.html");
@@ -18,6 +22,11 @@ app.get("/",function(req,res){
 
 });
 
+
+app.route('/*').get(function(req, res) { 
+  return res.sendFile(path.join(__dirname, 'public/signup.html')); 
+  
+});
 //app.get("/",function(req,res){
   //res.sendFile(__dirname +"/css/favicon.ico");
 //});
